@@ -1,0 +1,40 @@
+/* ==========================================================================
+   THEME: minimal
+   A clean, modern, sans-serif skin. Everything in Inter, lighter rules,
+   an indigo accent and solid auto-link underlines.
+
+   Pairs with assets/css/base.css. Loaded when `theme_name: minimal`.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --ink: #18181b;
+  --ink-soft: #3f3f46;
+  --ink-mute: #71717a;
+  --rule: #e7e7ea;
+  --rule-strong: #d4d4d8;
+  --paper: #ffffff;
+  --paper-tint: #f4f4f5;
+  --accent: #4f46e5;          /* indigo */
+  --accent-dark: #3730a3;
+
+  /* Metrics */
+  --maxw: 1140px;
+  --read: 700px;
+  --body-size: 18px;
+
+  /* Typography — sans everywhere */
+  --serif: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  /* Personality */
+  --autolink-underline: solid;
+}
+
+/* Modern look: lighter masthead, no drop-feel, less letter tracking. */
+.masthead__brand { font-weight: 800; letter-spacing: -0.02em; }
+.article__title,
+.card__title { letter-spacing: -0.02em; }
+.article__subtitle,
+.prose blockquote { font-style: normal; }
+.prose > p:first-of-type::first-letter { font-weight: inherit; }

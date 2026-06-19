@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+
+  {%- assign page_title = page.title | default: site.title -%}
+  {%- if page.title -%}
+    <title>{{ page.title | strip_html }} — {{ site.title }}</title>
+  {%- else -%}
+    <title>{{ site.title }} — {{ site.tagline }}</title>
+  {%- endif -%}
+
+  {%- comment -%} SEO, Open Graph, Twitter cards {%- endcomment -%}
+  {%- seo title=false -%}
+
+  {%- comment -%}
+    Theme system: `theme_name` in _config.yml selects a skin.
+    Theme metadata (fonts + css file) lives in _data/themes.yml.
+    base.css holds the shared structure; the theme file supplies the palette
+    and typography. Falls back to "nytimes" if the name is unknown.
+  {%- endcomment -%}
+  {%- assign theme_key = site.theme_name | default: "nytimes" -%}
+  {%- assign theme = site.data.themes[theme_key] | default: site.data.themes.nytimes -%}
+  {%- assign theme_css = theme.css | default: "nytimes.css" -%}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {%- if theme.fonts -%}
+  <link href="{{ theme.fonts }}" rel="stylesheet">
+  {%- endif -%}
+
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/themes/' | append: theme_css | relative_url }}">
+  {%- feed_meta -%}
+  <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+</head>
+<body class="{{ page.layout }}-page theme-{{ theme_key }}">

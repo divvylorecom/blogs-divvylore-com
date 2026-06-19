@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Ticker tape">
+  <rect width="1200" height="800" fill="#121212"/>
+  <g font-family="Consolas, monospace" font-size="54" fill="#f2efe9">
+    <text x="40" y="300">NIFTY +0.8%</text>
+    <text x="40" y="430" fill="#7fb069">SENSEX ▲</text>
+    <text x="40" y="560" fill="#e06666">VOL ▼</text>
+  </g>
+  <rect x="0" y="360" width="1200" height="4" fill="#326891" opacity="0.6"/>
+</svg>

@@ -1,0 +1,37 @@
+/* ==========================================================================
+   THEME: nytimes
+   A NYTimes-inspired editorial skin.
+   Typography: PT Serif (headlines + body), Libre Franklin (labels + UI).
+
+   Pairs with assets/css/base.css. Loaded when `theme_name: nytimes`
+   in _config.yml. Fonts are declared in _data/themes.yml.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --ink: #121212;
+  --ink-soft: #363636;
+  --ink-mute: #6b6b6b;
+  --rule: #e2e2e2;
+  --rule-strong: #121212;
+  --paper: #ffffff;
+  --paper-tint: #f7f7f7;
+  --accent: #326891;          /* NYT-style link blue */
+  --accent-dark: #1d4e72;
+
+  /* Metrics */
+  --maxw: 1200px;
+  --read: 720px;
+  --body-size: 18px;
+
+  /* Typography */
+  --serif: "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+
+  /* Personality */
+  --autolink-underline: dotted;
+}
+
+/* NYT signature: tall serif masthead, tight headline tracking already set
+   in base.css. A faint drop-feel on the opening paragraph. */
+.prose > p:first-of-type::first-letter { font-weight: 700; }

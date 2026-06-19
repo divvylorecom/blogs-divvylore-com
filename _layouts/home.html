@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{%- assign posts = paginator.posts | default: site.posts -%}
+{%- assign lead = posts | first -%}
+
+<div class="home">
+  {%- if content != "" -%}
+  <div class="home__intro prose">{{ content }}</div>
+  {%- endif -%}
+
+  {%- if lead -%}
+  <section class="lead-grid">
+    <div class="lead-grid__main">
+      {% include post-card.html post=lead variant="lead" %}
+    </div>
+    <div class="lead-grid__rail">
+      {%- for post in posts offset: 1 limit: 3 -%}
+        {% include post-card.html post=post variant="feature" %}
+      {%- endfor -%}
+    </div>
+  </section>
+  {%- endif -%}
+
+  {%- assign rest = posts | offset: 4 -%}
+  {%- if rest.size > 0 -%}
+  <h2 class="section-rule"><span>Latest</span></h2>
+  <section class="story-grid">
+    {%- for post in rest -%}
+      {% include post-card.html post=post variant="standard" %}
+    {%- endfor -%}
+  </section>
+  {%- endif -%}
+
+  {%- if paginator and paginator.total_pages > 1 -%}
+  <nav class="pagination" aria-label="Pagination">
+    {%- if paginator.previous_page -%}
+    <a class="pagination__prev" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
+    {%- endif -%}
+    <span class="pagination__count">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {%- if paginator.next_page -%}
+    <a class="pagination__next" href="{{ paginator.next_page_path | relative_url }}">Older →</a>
+    {%- endif -%}
+  </nav>
+  {%- endif -%}
+</div>

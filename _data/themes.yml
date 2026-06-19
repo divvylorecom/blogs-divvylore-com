@@ -1,0 +1,30 @@
+# ============================================================================
+# Theme registry
+# ----------------------------------------------------------------------------
+# Each entry is a selectable theme. Activate one by setting `theme_name`
+# in _config.yml to its key (e.g. theme_name: nytimes).
+#
+#   label : human-friendly name (used in docs / future theme switcher)
+#   css   : stylesheet under assets/css/themes/<file> (defaults to <key>.css)
+#   fonts : Google Fonts stylesheet URL to preload for this theme (optional)
+#
+# To ADD a new theme:
+#   1. Create assets/css/themes/<your-theme>.css (define the :root variables).
+#   2. Add an entry here with its fonts URL.
+#   3. Set theme_name: <your-theme> in _config.yml.
+# ============================================================================
+
+nytimes:
+  label: "The Journal (NYTimes-style)"
+  css: nytimes.css
+  fonts: "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;0,800;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+
+minimal:
+  label: "Minimal (modern sans)"
+  css: minimal.css
+  fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+
+sepia:
+  label: "Sepia (warm reading)"
+  css: sepia.css
+  fonts: "https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"

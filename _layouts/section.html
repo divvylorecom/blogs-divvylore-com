@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<div class="home">
+  <header class="page__header" style="text-align:center; margin-bottom: 8px;">
+    <span class="kicker">Section</span>
+    <h1 class="page__title">{{ page.title }}</h1>
+    {%- if page.subtitle -%}<p class="page__subtitle">{{ page.subtitle }}</p>{%- endif -%}
+  </header>
+
+  {%- assign posts = site.posts | where: "section", page.section -%}
+  {%- if posts.size > 0 -%}
+  <h2 class="section-rule"><span>{{ page.section }}</span></h2>
+  <section class="story-grid">
+    {%- for post in posts -%}
+      {% include post-card.html post=post variant="standard" %}
+    {%- endfor -%}
+  </section>
+  {%- else -%}
+  <p style="text-align:center; color: var(--ink-mute); padding: 40px 0;">
+    No stories in this section yet. Check back soon.
+  </p>
+  {%- endif -%}
+</div>

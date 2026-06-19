@@ -1,0 +1,69 @@
+# ============================================================================
+# Auto-hyperlink dictionary
+# ----------------------------------------------------------------------------
+# Every entry maps a word or phrase to a URL. When that term appears in the
+# body of a post, the build automatically turns it into a hyperlink.
+#
+# Fields:
+#   term            (required) The word/phrase to detect, e.g. "MoneyControl".
+#   url             (required) Where the link should point.
+#   title           (optional) Hover tooltip text for the link.
+#   match           (optional) "word"  -> match whole words only (default)
+#                              "phrase"-> allow matching inside longer text
+#   case_sensitive  (optional) true/false. Default false (case-insensitive).
+#   limit           (optional) Max links for this term in one article.
+#                              Overrides the global autolink.limit_per_term.
+#                              Use 0 for unlimited.
+#
+# Longer phrases are matched before shorter ones, so "Reserve Bank of India"
+# wins over "India". Existing links, code blocks and headings are never
+# touched.
+# ============================================================================
+
+- term: MoneyControl
+  url: https://www.moneycontrol.com/
+  title: MoneyControl — markets, news & data
+
+- term: Reserve Bank of India
+  url: https://www.rbi.org.in/
+  title: Reserve Bank of India
+
+- term: RBI
+  url: https://www.rbi.org.in/
+  title: Reserve Bank of India
+
+- term: SEBI
+  url: https://www.sebi.gov.in/
+  title: Securities and Exchange Board of India
+
+- term: NSE
+  url: https://www.nseindia.com/
+  title: National Stock Exchange of India
+
+- term: BSE
+  url: https://www.bseindia.com/
+  title: Bombay Stock Exchange
+
+- term: Nifty 50
+  url: https://www.nseindia.com/market-data/live-equity-market
+  title: Nifty 50 live market data
+
+- term: Sensex
+  url: https://www.bseindia.com/sensex/code/16/
+  title: S&P BSE Sensex
+
+- term: mutual funds
+  url: https://www.amfiindia.com/
+  title: Association of Mutual Funds in India
+
+- term: AMFI
+  url: https://www.amfiindia.com/
+  title: Association of Mutual Funds in India
+
+- term: SIP
+  url: https://www.amfiindia.com/investor-corner/knowledge-center/what-is-SIP.html
+  title: Systematic Investment Plan
+
+- term: Divvylore
+  url: https://www.divvylore.com/
+  title: Divvylore

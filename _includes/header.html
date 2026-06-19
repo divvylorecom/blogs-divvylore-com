@@ -1,0 +1,33 @@
+<header class="masthead" role="banner">
+  <div class="masthead__top">
+    <button class="nav-toggle" aria-label="Open sections menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="masthead__date">
+      {{ site.time | date: "%A, %B %-d, %Y" }}
+    </div>
+
+    <a class="masthead__brand" href="{{ '/' | relative_url }}">
+      {{ site.title }}
+    </a>
+
+    <div class="masthead__actions">
+      <a class="btn-subscribe" href="{{ '/about/' | relative_url }}">Subscribe</a>
+    </div>
+  </div>
+
+  <nav class="site-nav" id="site-nav" aria-label="Sections">
+    <ul>
+      {%- for item in site.data.navigation -%}
+        {%- assign cur = item.url | relative_url -%}
+        <li>
+          <a href="{{ item.url | relative_url }}"
+             {% if page.url == item.url %}aria-current="page"{% endif %}>
+            {{ item.title }}
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+</header>

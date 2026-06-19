@@ -1,0 +1,33 @@
+/* ==========================================================================
+   THEME: sepia
+   A warm, low-glare reading skin with a serif voice — good for long reads.
+
+   Pairs with assets/css/base.css. Loaded when `theme_name: sepia`.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --ink: #2b2620;
+  --ink-soft: #4a4338;
+  --ink-mute: #8a7f6d;
+  --rule: #e6dcc6;
+  --rule-strong: #c9b896;
+  --paper: #faf4e8;
+  --paper-tint: #f3ead6;
+  --accent: #9a5b2b;          /* warm sienna */
+  --accent-dark: #6f3f1c;
+
+  /* Metrics */
+  --maxw: 1100px;
+  --read: 700px;
+  --body-size: 19px;
+
+  /* Typography */
+  --serif: "PT Serif", Georgia, "Times New Roman", serif;
+  --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+
+  /* Personality */
+  --autolink-underline: dotted;
+}
+
+.prose > p:first-of-type::first-letter { font-weight: 700; }

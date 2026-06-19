@@ -1,0 +1,90 @@
+# ----------------------------------------------------------------------------
+# Site settings
+# ----------------------------------------------------------------------------
+title: Divvylore
+tagline: Markets, Money & Meaning
+description: >-
+  The Divvylore Journal — clear, considered writing on markets, investing,
+  personal finance and the technology reshaping how India saves and grows.
+author: Divvylore
+email: hello@divvylore.com
+
+# Production URL. Update `url` to your custom domain (matches CNAME).
+url: "https://blogs.divvylore.com"
+baseurl: ""
+
+# Default language and timezone
+lang: en
+timezone: Asia/Kolkata
+
+# ----------------------------------------------------------------------------
+# Theme / skin
+# ----------------------------------------------------------------------------
+# The look-and-feel is a swappable skin. Set this to any theme key defined in
+# _data/themes.yml. Each theme is assets/css/themes/<name>.css and shares the
+# structural assets/css/base.css. Built-in themes:
+#   nytimes  — NYTimes-style editorial (default)
+#   minimal  — modern, clean, sans-serif
+#   sepia    — warm, low-glare reading
+theme_name: nytimes
+
+# ----------------------------------------------------------------------------
+# Build settings
+# ----------------------------------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+
+# Plugins (built on GitHub Actions, so custom + extra plugins are allowed)
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination (home page)
+paginate: 8
+paginate_path: "/page:num/"
+
+# ----------------------------------------------------------------------------
+# Auto-hyperlink plugin settings
+# Terms are defined in _data/autolinks.yml. See README for details.
+# ----------------------------------------------------------------------------
+autolink:
+  enabled: true
+  # How many times a single term may be linked per article. 0 = unlimited.
+  limit_per_term: 1
+  # Open auto-generated links in a new tab.
+  new_tab: true
+  # CSS class applied to auto-generated links.
+  css_class: "auto-link"
+
+# ----------------------------------------------------------------------------
+# Collections / defaults
+# ----------------------------------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+# Files / folders excluded from the build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github
+  - node_modules
+  - .sass-cache

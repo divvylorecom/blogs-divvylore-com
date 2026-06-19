@@ -1,0 +1,23 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+    <a class="site-footer__brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <ul>
+        {%- for item in site.data.navigation -%}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {%- endfor -%}
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+      </ul>
+    </nav>
+
+    <p class="site-footer__legal">
+      © {{ site.time | date: "%Y" }} {{ site.author | default: site.title }}.
+      {{ site.description | strip_html | truncate: 90 }}
+    </p>
+  </div>
+</footer>
+
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

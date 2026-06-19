@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<article class="article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article__head">
+    {%- if page.section -%}
+    <a class="kicker kicker--link" href="{{ '/' | relative_url }}">{{ page.section }}</a>
+    {%- endif -%}
+
+    <h1 class="article__title" itemprop="headline">{{ page.title }}</h1>
+
+    {%- if page.subtitle -%}
+    <p class="article__subtitle" itemprop="description">{{ page.subtitle }}</p>
+    {%- endif -%}
+
+    <div class="article__byline">
+      {%- if page.author -%}
+      <span class="article__author" itemprop="author">By {{ page.author }}</span>
+      {%- endif -%}
+      <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      {%- if page.read_time -%}<span class="article__read">{{ page.read_time }}</span>{%- endif -%}
+    </div>
+  </div>
+
+  {%- if page.image -%}
+  <figure class="article__lede">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" itemprop="image">
+    {%- if page.image_caption -%}
+    <figcaption>{{ page.image_caption }}</figcaption>
+    {%- endif -%}
+  </figure>
+  {%- endif -%}
+
+  <div class="article__body prose" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if page.tags and page.tags.size > 0 -%}
+  <div class="article__tags">
+    {%- for tag in page.tags -%}<span class="tag">{{ tag }}</span>{%- endfor -%}
+  </div>
+  {%- endif -%}
+</article>
+
+{%- comment -%} More to read {%- endcomment -%}
+{%- assign related = site.posts | where_exp: "p", "p.url != page.url" | slice: 0, 4 -%}
+{%- if related.size > 0 -%}
+<aside class="more-to-read">
+  <h2 class="section-rule"><span>More to read</span></h2>
+  <div class="more-to-read__grid">
+    {%- for post in related -%}
+      {% include post-card.html post=post variant="compact" %}
+    {%- endfor -%}
+  </div>
+</aside>
+{%- endif -%}
