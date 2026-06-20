@@ -78,6 +78,10 @@ a { color: inherit; }
   letter-spacing: .02em;
 }
 .masthead__brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   font-family: var(--serif);
   font-weight: 700;
   font-size: clamp(28px, 5vw, 46px);
@@ -86,6 +90,11 @@ a { color: inherit; }
   text-decoration: none;
   color: var(--ink);
   line-height: 1;
+}
+.brand-logo {
+  width: clamp(26px, 3.2vw, 36px);
+  height: clamp(26px, 3.2vw, 36px);
+  flex-shrink: 0;
 }
 .masthead__actions { text-align: right; }
 .btn-subscribe {
@@ -393,7 +402,7 @@ a { color: inherit; }
    ========================================================================== */
 .site-footer { border-top: 1px solid var(--rule-strong); margin-top: 40px; }
 .site-footer__inner { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 48px; text-align: center; }
-.site-footer__brand { font-family: var(--serif); font-weight: 700; font-size: 30px; text-decoration: none; color: var(--ink); }
+.site-footer__brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--serif); font-weight: 700; font-size: 30px; text-decoration: none; color: var(--ink); }
 .site-footer__nav ul { list-style: none; margin: 18px 0 16px; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
 .site-footer__nav a { font-family: var(--sans); font-size: 13px; font-weight: 600; text-decoration: none; color: var(--ink-soft); }
 .site-footer__nav a:hover { color: var(--accent); }
@@ -415,6 +424,7 @@ a { color: inherit; }
   .masthead__top { grid-template-columns: auto 1fr auto; }
   .masthead__date { display: none; }
   .masthead__brand { font-size: 30px; }
+  .brand-logo { width: 26px; height: 26px; }
   .btn-subscribe { padding: 7px 11px; font-size: 12px; }
 
   /* Collapse section nav into toggle menu */

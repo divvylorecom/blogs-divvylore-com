@@ -1,6 +1,9 @@
 <footer class="site-footer" role="contentinfo">
   <div class="site-footer__inner">
-    <a class="site-footer__brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <a class="site-footer__brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      <img class="brand-logo" src="{{ '/assets/logo.svg' | relative_url }}" alt="{{ site.title }} logo">
+      <span>{{ site.title }}</span>
+    </a>
 
     <nav class="site-footer__nav" aria-label="Footer">
       <ul>
